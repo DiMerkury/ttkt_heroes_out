@@ -1,0 +1,178 @@
+[
+  {
+    "id": "red_dragon_1",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "attack"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_2",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "attack"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_3",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "attack"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_4",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "attack"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_5",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "attack"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_6",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "range_attack"}, {"kind": "range_attack"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_7",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "range_attack"}, {"kind": "range_attack"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_8",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "range_attack"}, {"kind": "range_attack"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "red_dragon_9",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "spawn", "params": {"hall": "treasury"}}],
+      [{"kind": "move"}, {"kind": "move"}]
+    ]
+  },
+  {
+    "id": "red_dragon_10",
+    "type": "monster_card",
+    "class": "red_dragon",
+    "actions": [
+      [{"kind": "spawn", "params": {"hall": "treasury"}}],
+      [{"kind": "move"}, {"kind": "move"}]
+    ]
+  },
+  {
+    "id": "slime_1",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "slime_2",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "slime_3",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "move"}],
+      [{"kind": "action"}]
+    ]
+  },
+  {
+    "id": "slime_4",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "attack"}],
+      [{"kind": "spawn", "params": {"hall": "bones"}}]
+    ]
+  },
+  {
+    "id": "slime_5",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "attack"}],
+      [{"kind": "spawn", "params": {"hall": "bones"}}]
+    ]
+  },
+  {
+    "id": "slime_6",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      [{"kind": "move"}, {"kind": "attack"}],
+      [{"kind": "spawn", "params": {"hall": "bones"}}]
+    ]
+  },
+  {
+    "id": "slime_7",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      {"kind": "defense", "params": {"kind": "spawn"}}
+    ]
+  },
+  {
+    "id": "slime_8",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      {"kind": "defense", "params": {"kind": "spawn"}}
+    ]
+  },
+  {
+    "id": "slime_9",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      {"kind": "defense", "params": {"kind": "spawn"}}
+    ]
+  },
+  {
+    "id": "slime_10",
+    "type": "monster_card",
+    "class": "slime",
+    "actions": [
+      {"kind": "defense", "params": {"kind": "spawn"}}
+    ]
+  }
+]

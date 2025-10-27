@@ -1,0 +1,72 @@
+[
+  {
+    "id": "forge",
+    "label": "Кузница",
+    "spawn": "swords",
+    "action": "exchange_coin_to_weapon_card",
+    "connections": 2
+  },
+  {
+    "id": "library",
+    "label": "Библиотека",
+    "spawn": "hat",
+    "action": "create_book",
+    "connections": 2
+  },
+  {
+    "id": "sewerage",
+    "label": "Канализация",
+    "spawn": "bones",
+    "action": "create_frog",
+    "connections": 2
+  },
+  {
+    "id": "workshop",
+    "label": "Мастерская",
+    "spawn": "swords",
+    "action": "create_trap",
+    "connections": 2
+  },
+  {
+    "id": "treasury",
+    "label": "Сокровищница",
+    "spawn": "treasury",
+    "action": "create_coin",
+    "connections": 4
+  },
+  {
+    "id": "cabinet",
+    "label": "Кабинет",
+    "spawn": "eye",
+    "action": "exchange_book_to_scroll_card",
+    "connections": 2
+  },
+  {
+    "id": "trainers_hall",
+    "label": "Зал дрессировщика",
+    "spawn": "bones",
+    "action": "exchange_bone_to_pet_card",
+    "connections": 2
+  },
+  {
+    "id": "cemetery",
+    "label": "Кладбище",
+    "spawn": "eye",
+    "action": "create_bone",
+    "connections": 2
+  },
+  {
+    "id": "potion_masters_hall",
+    "label": "Зал зельевара",
+    "spawn": "hat",
+    "action": "exchange_frog_to_potion_card",
+    "connections": 2
+  },
+  {
+    "id": "prison",
+    "label": "Тюрьма",
+    "spawn": "prison",
+    "action": "none",
+    "connections": 1
+  }
+]

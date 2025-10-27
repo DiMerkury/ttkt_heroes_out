@@ -1,0 +1,114 @@
+[
+  {
+    "id": "h_warrior_eye",
+    "name": "Воин",
+    "hp": 1,
+    "spawn": "eye",
+    "behavior": "destroy_resources"
+  },
+  {
+    "id": "h_warrior_bones",
+    "name": "Воин",
+    "hp": 1,
+    "spawn": "bones",
+    "behavior": "destroy_resources"
+  },
+  {
+    "id": "h_warrior_swords",
+    "name": "Воин",
+    "hp": 1,
+    "spawn": "swords",
+    "behavior": "destroy_resources"
+  },
+  {
+    "id": "h_warrior_hat",
+    "name": "Воин",
+    "hp": 1,
+    "spawn": "hat",
+    "behavior": "destroy_resources"
+  },
+  {
+    "id": "h_archer_eye",
+    "name": "Лучница",
+    "hp": 1,
+    "spawn": "eye",
+    "behavior": "ranged_attack"
+  },
+  {
+    "id": "h_archer_bones",
+    "name": "Лучница",
+    "hp": 1,
+    "spawn": "bones",
+    "behavior": "ranged_attack"
+  },
+  {
+    "id": "h_archer_swords",
+    "name": "Лучница",
+    "hp": 1,
+    "spawn": "swords",
+    "behavior": "ranged_attack"
+  },
+  {
+    "id": "h_archer_hat",
+    "name": "Лучница",
+    "hp": 1,
+    "spawn": "hat",
+    "behavior": "ranged_attack"
+  },
+  {
+    "id": "h_rogue_eye",
+    "name": "Разбойница",
+    "hp": 1,
+    "spawn": "eye",
+    "behavior": "steal_treasure"
+  },
+  {
+    "id": "h_rogue_bones",
+    "name": "Разбойница",
+    "hp": 1,
+    "spawn": "bones",
+    "behavior": "steal_treasure"
+  },
+  {
+    "id": "h_rogue_swords",
+    "name": "Разбойница",
+    "hp": 1,
+    "spawn": "swords",
+    "behavior": "steal_treasure"
+  },
+  {
+    "id": "h_rogue_hat",
+    "name": "Разбойница",
+    "hp": 1,
+    "spawn": "hat",
+    "behavior": "steal_treasure"
+  },
+  {
+    "id": "h_mage_eye",
+    "name": "Маг",
+    "hp": 1,
+    "spawn": "eye",
+    "behavior": "release_prisoners"
+  },
+  {
+    "id": "h_mage_bones",
+    "name": "Маг",
+    "hp": 1,
+    "spawn": "bones",
+    "behavior": "release_prisoners"
+  },
+  {
+    "id": "h_mage_swords",
+    "name": "Маг",
+    "hp": 1,
+    "spawn": "swords",
+    "behavior": "release_prisoners"
+  },
+  {
+    "id": "h_mage_hat",
+    "name": "Маг",
+    "hp": 1,
+    "spawn": "hat",
+    "behavior": "release_prisoners"
+  }
+]

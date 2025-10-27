@@ -1,0 +1,22 @@
+[
+  {
+    "class": "red_dragon",
+    "description": "Героев лучше подавать хорошо поджаренными. Совет: сосредоточьтесь на зельях и атакующих свитках.",
+    "hp": 5,
+    "cards": 10,
+    "max_count": 1,
+    "kind": "heal",
+    "spawn_count": 1,
+    "spawn": "treasury"
+  },
+  {
+    "class": "slime",
+    "description": "Разделяйся и властвуй. Совет: чаще активируйте способности деления.",
+    "hp": 1,
+    "cards": 10,
+    "max_count": 8,
+    "kind": "take_card",
+    "spawn_count": 4,
+    "spawn": "bones"
+  }
+]

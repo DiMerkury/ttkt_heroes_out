@@ -1,0 +1,33 @@
+ktho_full_backup/
+├── main.py
+├── requirements.txt
+├── README.md
+├── api/
+│   ├── __init__.py
+│   ├── ws_manager.py
+│   └── routes_game.py
+├── common/
+│   ├── __init__.py
+│   ├── config.py
+│   ├── redis_manager.py
+│   └── logger.py
+├── models/
+│   ├── __init__.py
+│   ├── base.py
+│   └── cards.py
+├── services/
+│   ├── __init__.py
+│   ├── action_executor.py
+│   ├── rule_engine.py
+│   ├── deck_service.py
+│   ├── event_service.py
+│   ├── hero_ai_service.py
+│   ├── victory_service.py
+│   └── game_service.py
+└── data/
+    ├── clans.json
+    ├── cards_shop.json
+    ├── cards_monsters.json
+    └── scenarios/
+        └── scenario_01.json
+        
