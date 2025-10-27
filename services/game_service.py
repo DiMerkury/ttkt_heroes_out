@@ -1,8 +1,8 @@
 # services/game_service.py
 import json
-from typing import Optional, List
+from typing import Optional
 from common.logger import logger
-from models import GameState, PhaseType
+from models import GameState, Hall, Player, Monster, Hero, Treasure, PhaseType
 from services.hero_ai_service import HeroAIService
 from services.rule_engine import RuleEngine
 from services.game_log_service import GameLogService
@@ -37,13 +37,9 @@ class GameService:
             logger.warning(f"[GAME_SERVICE] Game {game_id} not found in Redis")
             return None
 
-        try:
-            state = GameState.from_json(data)
-            logger.debug(f"[GAME_SERVICE] Loaded game {game_id}")
-            return state
-        except Exception as e:
-            logger.error(f"[GAME_SERVICE] Failed to decode game state: {e}")
-            return None
+        state = GameState.from_json(data)
+        logger.debug(f"[GAME_SERVICE] Loaded game {game_id}")
+        return state
 
     async def save_state(self, game_id: str, state: GameState):
         """
@@ -60,6 +56,7 @@ class GameService:
         state = await self.load_state(game_id)
         if not state:
             return None
+
         await self.save_state(game_id, state)
         return state
 
@@ -70,57 +67,83 @@ class GameService:
     async def create_game(
         self,
         game_id: str,
-        player_names: List[str],
+        player_names: list[str],
+        scenario_id: str,
         difficulty: str = "family",
     ) -> GameState:
         """
-        Создаёт новую игру, используя данные из data/.
+        Создаёт новую партию на основе данных из JSON.
+        Загружает сценарий, героев, классы монстров и колоды.
         """
-        logger.info(f"[GAME_SERVICE] Creating new game {game_id} ({difficulty})")
+        logger.info(f"[GAME_SERVICE] Creating new game {game_id} ({scenario_id})")
 
-        # Загружаем базовые данные
-        scenario = self.data_loader.load_scenario("scenario_1.json")
+        # --- Загрузка данных ---
+        scenario = self.data_loader.load_scenario(scenario_id)
         heroes = self.data_loader.load_heroes()
         monster_classes = self.data_loader.load_monster_classes()
         monster_decks = self.data_loader.load_monster_decks()
-        shop_cards = self.data_loader.load_shop_cards()
+        halls = self.data_loader.load_halls()
 
-        # Проверка, что сценарий содержит сокровищницу
-        treasury_present = any(
-            "treasury_4" in hall.get("tokens", [])
-            or hall.get("id") == "treasury"
-            for hall in scenario["halls"]
-        )
-        if not treasury_present:
-            raise ValueError("Scenario must contain a treasury hall or treasure_4 token")
+        # --- Инициализация игроков ---
+        players = [
+            Player(
+                id=f"p{i+1}",
+                name=name,
+                resources={"gold": 0, "souls": 0},
+            )
+            for i, name in enumerate(player_names)
+        ]
 
-        # Формируем игроков
-        players = []
-        for i, name in enumerate(player_names):
-            monster_class = list(monster_classes.keys())[i % len(monster_classes)]
-            players.append({
-                "id": f"p{i+1}",
-                "name": name,
-                "monster_class": monster_class,
-                "hand": [],
-                "resources": {},
-            })
+        # --- Подготовка залов из сценария ---
+        scenario_halls = []
+        for hall_data in scenario["halls"]:
+            base = next((h for h in halls if h["id"] == hall_data["id"]), None)
+            if not base:
+                logger.warning(f"[GAME_SERVICE] Hall {hall_data['id']} not found in base data")
+                continue
 
-        # Создаём состояние
+            hall = Hall(
+                id=base["id"],
+                tokens=hall_data.get("tokens", []),
+                heroes=[],
+                monsters=[],
+                treasure=None,
+            )
+            scenario_halls.append(hall)
+
+        # --- Проверка наличия сокровищницы ---
+        has_treasure_hall = any(h.id == "treasury" for h in scenario_halls)
+        has_treasure_token = any("treasury_4" in h.tokens for h in scenario_halls)
+        if not (has_treasure_hall or has_treasure_token):
+            raise ValueError("Сценарий должен содержать зал 'treasury' или токен 'treasury_4'.")
+
+        # --- Формирование стартового состояния ---
         state = GameState(
             id=game_id,
-            phase=PhaseType.PLAYER,
-            difficulty=difficulty,
-            halls={h["id"]: h for h in scenario["halls"]},
+            players=players,
+            halls=scenario_halls,
             heroes=[],
             monsters=[],
             treasures=[],
+            difficulty=difficulty,
+            phase=PhaseType.PLAYER,
             game_over=False,
-            result=None,
         )
 
+        # --- Лог ---
+        await self.log_service.add_entry(
+            game_id,
+            entry_type="game_start",
+            payload={
+                "players": [p.name for p in players],
+                "scenario": scenario_id,
+                "difficulty": difficulty,
+            },
+        )
+
+        # --- Сохраняем ---
         await self.save_state(game_id, state)
-        logger.info(f"[GAME_SERVICE] Game {game_id} initialized successfully.")
+        logger.info(f"[GAME_SERVICE] Game {game_id} initialized.")
         return state
 
     # =====================================================
@@ -154,7 +177,7 @@ class GameService:
 
     async def check_victory(self, state: GameState) -> bool:
         """
-        Проверка победы игроков (например, все волны завершены).
+        Проверка победы игроков.
         """
         if state.wave > 2 and not state.game_over:
             state.phase = PhaseType.GAME_OVER
