@@ -1,17 +1,17 @@
-# KTHO Backend - Full Backup
+# TTKT Heroes Out — backend (starter)
 
-This backup contains the server side code discussed in the chat:
-- FastAPI server with WebSockets
-- Redis-backed asynchronous storage (RedisStorage)
-- GameService, HeroAIService, RuleEngine, ActionExecutor
-- Deck and event handling (treasure effects)
-- Sample data (scenarios, clans, shop cards)
+## Quick start (local)
+1. create venv, install dependencies:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
 
-## Quick start
-1. Start Redis on localhost (or set REDIS_URL env var)
-2. Install requirements: pip install -r requirements.txt
-3. Run: uvicorn main:app --reload
-4. Open: http://127.0.0.1:8000/docs
+2. start redis (docker):
+   docker run -p 6379:6379 -d redis:7
 
-## Redis keys
-- `game:{game_id}:state` — JSON of full game state
+3. run app:
+   uvicorn app.main:app --reload
+
+4. API docs:
+   http://127.0.0.1:8000/docs

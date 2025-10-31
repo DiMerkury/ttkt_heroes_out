@@ -1,0 +1,5 @@
+{
+  "family": {"wave_1_cards": 1, "wave_2_cards": 2},
+  "normal": {"wave_1_cards": 2, "wave_2_cards": 2},
+  "hard": {"wave_1_cards": 2, "wave_2_cards": 3}
+}

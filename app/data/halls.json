@@ -1,0 +1,26 @@
+[
+{
+    "id":"prison",
+    "label":"Тюрьма",
+    "spawn":"prison",
+    "action":"none",
+    "connections":["potion_masters_hall"],
+    "tokens":[]
+},
+{
+    "id":"potion_masters_hall",
+    "label":"Зал зельевара",
+    "spawn":"hat",
+    "action":"exchange_frog_to_potion_card",
+    "connections":["prison","treasury"],
+    "tokens":[]
+},
+{
+    "id":"treasury",
+    "label":"Сокровищница",
+    "spawn":"treasury",
+    "action":"create_coin",
+    "connections":["potion_masters_hall"],
+    "tokens":["treasury_4"]
+}
+]

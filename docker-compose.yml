@@ -1,0 +1,8 @@
+services:
+
+  redis:
+    image: redis
+    container_name: redis_ttkt
+    restart: unless-stopped
+    ports:
+      - "6379:6379"

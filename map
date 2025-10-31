@@ -1,33 +1,40 @@
-ktho_full_backup/
-├── main.py
+ttkt_heroes_out/
+├── app/
+│   ├── main.py
+│   ├── api/
+│   │   ├── __init__.py
+│   │   └── routes_game.py
+│   ├── common/
+│   │   ├── __init__.py
+│   │   ├── config.py
+│   │   ├── logger.py
+│   │   ├── redis_manager.py
+│   │   └── dependencies.py
+│   ├── models/
+│   │   ├── __init__.py
+│   │   ├── base.py
+│   │   ├── hall.py
+│   │   ├── player.py
+│   │   ├── hero.py
+│   │   ├── monster.py
+│   │   ├── treasure.py
+│   │   └── game_state.py
+│   ├── services/
+│   │   ├── __init__.py
+│   │   ├── data_loader.py
+│   │   ├── game_initializer.py
+│   │   ├── game_service.py
+│   │   ├── hero_ai_service.py
+│   │   ├── rule_engine.py
+│   │   ├── game_log_service.py
+│   │   └── ws_manager.py
+│   └── data/
+│       ├── config/
+│       │   ├── difficulty.json
+│       │   └── treasure_effects.json
+│       ├── heroes.json
+│       ├── halls.json
+│       └── scenario/
+│           └── scenario_01.json
 ├── requirements.txt
-├── README.md
-├── api/
-│   ├── __init__.py
-│   ├── ws_manager.py
-│   └── routes_game.py
-├── common/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── redis_manager.py
-│   └── logger.py
-├── models/
-│   ├── __init__.py
-│   ├── base.py
-│   └── cards.py
-├── services/
-│   ├── __init__.py
-│   ├── action_executor.py
-│   ├── rule_engine.py
-│   ├── deck_service.py
-│   ├── event_service.py
-│   ├── hero_ai_service.py
-│   ├── victory_service.py
-│   └── game_service.py
-└── data/
-    ├── clans.json
-    ├── cards_shop.json
-    ├── cards_monsters.json
-    └── scenarios/
-        └── scenario_01.json
-        
+└── README.md

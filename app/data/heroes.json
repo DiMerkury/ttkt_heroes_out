@@ -1,0 +1,4 @@
+[
+  {"id":"h_warrior","name":"Warrior","attack":2,"health":5},
+  {"id":"h_mage","name":"Mage","attack":3,"health":4}
+]

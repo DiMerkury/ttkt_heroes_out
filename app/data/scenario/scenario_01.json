@@ -1,0 +1,13 @@
+{
+  "id": "scenario_01",
+  "label": "Первые шаги под землю",
+  "max_wave": 3,
+  "halls": [
+    {"id":"prison","tokens":[],"connections":["potion_masters_hall"]},
+    {"id":"potion_masters_hall","tokens":[],"connections":["prison","treasury"]},
+    {"id":"treasury","tokens":["treasury_4"],"connections":["potion_masters_hall"]}
+  ],
+  "treasures": [
+    {"id":"treasure_1","tier":1,"location":"treasury"}
+  ]
+}
