@@ -1,12 +1,17 @@
 from typing import Optional
+from pydantic import Field
 from .base import TTKTBaseModel
 
+
 class Monster(TTKTBaseModel):
+    """
+    Конкретный монстр на поле. Принадлежит игроку.
+    """
+
     id: str
-    name: str
-    hp: int
-    attack: int
-    defense: int
     class_id: str
+    owner_id: str
+    hp: int
+
     location: Optional[str] = None
-    owner_id: Optional[str] = None
+    resources: Optional[str] = None

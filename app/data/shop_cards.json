@@ -28,10 +28,8 @@
   "type": "shop_card",
   "class": "pet",
   "actions": [
-    [
       [{"kind": "take_card"}, {"kind": "defense"}],
       [{"kind": "create_trap"}, {"kind": "create_trap"}]
-    ]
   ]
 },
 {
@@ -39,24 +37,17 @@
   "type": "shop_card",
   "class": "pet",
   "actions": [
-    [
       [{"kind": "take_card"}, {"kind": "attack"}],
       [{"kind": "take_card"}, {"kind": "create_trap"}]
-    ]
   ]
 },
-
-
-
 {
   "id": "shop_5",
   "type": "shop_card",
   "class": "weapon",
   "actions": [
-    [
       [{"kind": "defense"}],
       [{"kind": "all_move"}]
-    ]
   ]
 },
 {
@@ -64,10 +55,8 @@
   "type": "shop_card",
   "class": "weapon",
   "actions": [
-    [
       [{"kind": "move"}, {"kind": "attack"}],
       [{"kind": "all_attack"}]
-    ]
   ]
 },
 {
@@ -75,10 +64,8 @@
   "type": "shop_card",
   "class": "weapon",
   "actions": [
-    [
       [{"kind": "attack"}, {"kind": "attack"}],
       [{"kind": "all_attack"}]
-    ]
   ]
 },
 {
@@ -86,14 +73,10 @@
   "type": "shop_card",
   "class": "weapon",
   "actions": [
-    [
       [{"kind": "attack"}],
       [{"kind": "all_range_attack"}]
-    ]
   ]
 },
-
-
 {
   "id": "shop_9",
   "type": "shop_card",
@@ -109,24 +92,18 @@
   "type": "shop_card",
   "class": "potion",
   "actions": [
-    [
       [{"kind": "view_take_card", "params": {"value": "pet"}}],
       [{"kind": "action"}]
-    ]
   ]
 },
-
-
 {
   "id": "shop_11",
   "type": "shop_card",
   "class": "scroll",
   "actions": [
-    [
       [{"kind": "create_portal"}],
       [{"kind": "range_attack"}, {"kind": "range_attack"}],
       [{"kind": "create_trap"}]
-    ]
   ]
 },
 {
@@ -134,11 +111,8 @@
   "type": "shop_card",
   "class": "scroll",
   "actions": [
-    [
       [{"kind": "create_portal"}],
       [{"kind": "move"}, {"kind": "move"}, {"kind": "move"}]
-    ]
   ]
 }
-
 ]

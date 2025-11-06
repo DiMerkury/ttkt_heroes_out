@@ -1,0 +1,17 @@
+{
+  "id": "s_1",
+  "name": "Первые шаги под землю",
+  "description": "Базовый сценарий для обучения.",
+  "halls": [
+    {"id": "prison", "connections": ["potion_masters_hall"], "tokens": [], "treasure": "treasury_2"},
+    {"id": "potion_masters_hall", "connections": ["prison", "treasury"], "tokens": [], "treasure": "treasury_3"},
+    {"id": "treasury", "connections": ["potion_masters_hall", "cabinet", "workshop"], "tokens": ["closed_portal"], "treasure": "treasury_4"},
+    {"id": "cabinet", "connections": ["treasury", "trainers_hall"], "tokens": [], "treasure": "treasury_3"},
+    {"id": "trainers_hall", "connections": ["cabinet", "cemetery"], "tokens": [], "treasure": "treasury_2"},
+    {"id": "cemetery", "connections": ["trainers_hall", "forge"], "tokens": [], "treasure": "treasury_1"},
+    {"id": "forge", "connections": ["cemetery", "library"], "tokens": ["closed_portal"], "treasure": "treasury_2"},
+    {"id": "library", "connections": ["forge", "sewerage"], "tokens": [], "treasure": "treasury_1"},
+    {"id": "sewerage", "connections": ["library", "workshop"], "tokens": [], "treasure": "treasury_2"},
+    {"id": "workshop", "connections": ["sewerage", "treasury"], "tokens": [], "treasure": "treasury_3"}
+  ]
+}

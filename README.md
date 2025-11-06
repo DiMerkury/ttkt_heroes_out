@@ -15,3 +15,6 @@
 
 4. API docs:
    http://127.0.0.1:8000/docs
+
+5. check data json:
+   python -m app.services.data_loader --check
